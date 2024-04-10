@@ -1,8 +1,8 @@
 
 "use client"
 
-import { AuthComponentWithContext } from '@/app/ui_engineering/lifecycle/context_api/(components)/authContext';
-import LoginButton from '@/app/ui_engineering/lifecycle/context_api/(components)/loginButton';
+import { AuthComponentWithContext } from './(components)/authContext';
+import LoginButton from './(components)/loginButton';
 
 const App = () => {
   return (
