@@ -1,42 +1,40 @@
-"use client"
-
 import React, { Component } from 'react';
 
 interface Props {}
 
 interface State {
   count: number;
+  timer: NodeJS.Timeout | null;
 }
 
 class LifecycleExample extends Component<Props, State> {
-  private timer: NodeJS.Timeout | null = null;
-
   constructor(props: Props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      timer: null,
     };
   }
 
   componentDidMount() {
-    console.log('Component mounted');
-    // Simulate fetching data or subscribing to events
-    this.timer = setInterval(() => {
-      this.setState(prevState => ({ count: prevState.count + 1 }));
+    // console.log('Component mounted');
+    const timer = setInterval(() => {
+      this.setState((prevState) => ({ count: prevState.count + 1 }));
     }, 1000);
+    this.setState({ timer });
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevState.count !== this.state.count) {
-      console.log('Component updated');
+      // console.log('Component updated');
     }
   }
 
   componentWillUnmount() {
-    console.log('Component will unmount');
-    // Clean up tasks like clearing intervals or cancelling subscriptions
-    if (this.timer) {
-      clearInterval(this.timer);
+    // console.log('Component will unmount');
+    const { timer } = this.state;
+    if (timer) {
+      clearInterval(timer);
     }
   }
 
