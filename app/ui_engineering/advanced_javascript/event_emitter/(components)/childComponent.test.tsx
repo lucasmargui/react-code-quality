@@ -1,7 +1,7 @@
 // ChildComponent.test.js
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import ChildComponent from './(components)/childComponent';
+import ChildComponent from './childComponent';
 
 test('ChildComponent button click', () => {
   const mockButtonClick = jest.fn(); // Create a mock function
