@@ -1,54 +1,46 @@
-"use client"
+// ExampleComponent.js
+import React, { useState } from 'react';
 
-import React, { useState, useEffect } from 'react';
 
-const fetchData = () => {
-  return new Promise<string[]>((resolve, reject) => {
-    setTimeout(() => {
-      // Simulating fetching data from an API
-      const data = ['Item 1', 'Item 2', 'Item 3'];
-      if (data.length > 0) {
-        resolve(data);
-      } else {
-        reject('Error fetching data');
+interface Data {
+  message: string;
+}
+
+
+const ExampleComponent = () => {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<Data | null>(null);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      if (!response.ok) {
+        throw new Error('Failed to fetch');
       }
-    }, 2000);
-  });
-};
-
-const MyComponent = () => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<string[]>([]);
-
-  useEffect(() => {
-    const fetchDataAsync = async () => {
-      try {
-        const result = await fetchData();
-        setData(result);
-      } catch (error) {
-        console.error('Error:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDataAsync();
-  }, []);
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
-      <h1>My Component</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {data.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+      <button onClick={fetchData}>Fetch Data</button>
+      {loading && <div data-testid="loading">Loading...</div>}
+      {error && <div>Error fetching data: {error}</div>}
+      {data && (
+        <div>
+          <p data-testid="data-message">{data.message}</p>
+        </div>
       )}
     </div>
   );
 };
 
-export default MyComponent;
+export default ExampleComponent;
