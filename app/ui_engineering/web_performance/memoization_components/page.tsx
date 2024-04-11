@@ -1,6 +1,6 @@
 
-import ExpensiveCalculation from '@/app/ui_engineering/web_performance/memoization_components/(components)/expensiveCalculation';
-import Fatorial from '@/app/ui_engineering/web_performance/memoization_components/(components)/fatorial';
+
+import Fatorial from './(components)/fatorial';
 
 export default async function Page() {
 

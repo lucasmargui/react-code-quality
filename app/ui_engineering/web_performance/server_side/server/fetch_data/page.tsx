@@ -1,41 +1,46 @@
-"use client"
+// ExampleComponent.js
+import React, { useState } from 'react';
 
-// pages/index.js
 
-import React, { useState, useEffect } from 'react';
+interface Data {
+  message: string;
+}
 
-const IndexPage = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const jsonData = await response.json();
-        setData(jsonData);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
+const ExampleComponent = () => {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<Data | null>(null);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      if (!response.ok) {
+        throw new Error('Failed to fetch');
       }
-    };
-
-    fetchData();
-  }, []);
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
-      <h1>Fetch Data Example</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
+      <button onClick={fetchData}>Fetch Data</button>
+      {loading && <div data-testid="loading">Loading...</div>}
+      {error && <div>Error fetching data: {error}</div>}
+      {data && (
         <div>
-          <h2>Data:</h2>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
+          <p data-testid="data-message">{data.message}</p>
         </div>
       )}
     </div>
   );
 };
 
-export default IndexPage;
+export default ExampleComponent;
