@@ -2,11 +2,11 @@
 
 // App.js
 import React, { Suspense, lazy } from 'react';
-import ComponenteA from '@/app/ui_engineering/web_performance/code_splitting/(components)/componentA';
+import ComponenteA from './components/componentA';
 
-const ComponenteB = lazy(() => import('@/app/ui_engineering/web_performance/code_splitting/(components)/componentB'));
-const ComponenteC = lazy(() => import('@/app/ui_engineering/web_performance/code_splitting/(components)/componentC'));
-const ComponenteD = lazy(() => import('@/app/ui_engineering/web_performance/code_splitting/(components)/componentD'));
+const ComponenteB = lazy(() => import('./components/componentB'));
+const ComponenteC = lazy(() => import('./components/componentC'));
+const ComponenteD = lazy(() => import('./components/componentD'));
 
 const App = () => {
 

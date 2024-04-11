@@ -14,7 +14,7 @@ const ComponenteC = () => {
   return (
     <div>
       {loaded ? (
-        <h1>Componente C</h1>
+        <h1>Component C</h1>
       ) : (
         <h1>Carregando Componente C...</h1>
       )}
