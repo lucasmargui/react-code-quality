@@ -13,13 +13,6 @@ In your terminal, run the following command:
 npx create-next-app --example with-jest with-jest-app
 ```
 
-## Running Tests
-
-```bash
-npm run test
-```
-
-
 ## api-client
 
 - test: fetches users on component creation and renders them
@@ -172,5 +165,11 @@ npm run test
 - test: displays an error message if fetching data fails
   
 
+
+## Running Tests
+
+```bash
+npm run test
+```
 
 
