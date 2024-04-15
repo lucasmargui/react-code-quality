@@ -132,6 +132,21 @@ Creating a placeholder or simulated component for testing or development purpose
 
 
 
+## Expect
+
+It's used to define assertions or expectations within test cases. When writing tests, you use expect to make statements about the behavior of your code and to verify whether certain conditions are met.
+
+Examples:
+
+- expect(getByText('')).toBeInTheDocument();
+- expect(screen.getByRole("heading")).toHaveTextContent("");
+- expect(button).toBeInTheDocument();
+- expect(button).toHaveTextContent('Click me');
+- expect(onClickMock).toHaveBeenCalled();
+- expect(additionalTextElement).toBeNull();
+- expect(nameInput.value).toBe('John');
+- expect(mockLogin).toHaveBeenCalledWith('test@example.com', 'validpassword');
+
 
 ## Test
 
@@ -288,6 +303,9 @@ Involves a cyclical process of experimentation and analysis, where testing gener
 - test: fetches and displays data when the button is clicked
 - test: displays an error message if fetching data fails
   
+
+
+
 
 
 
