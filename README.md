@@ -58,6 +58,52 @@ Execute code once before each test
   });
   ```
 
+
+## Mock 
+
+### Mock Function
+
+exemplo 1
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/01345ecf-77b7-4a61-a6de-7ed1085c60dd)
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/3257b4e7-2c3f-4238-a676-35f5b3b14e38)
+
+example 2 
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/34ab2817-f88e-438c-a7f9-728cdb3ea4fa)
+
+
+
+
+### Mock Fetch
+
+
+example 1
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/7b3fa877-fecd-4205-9b3d-53caf7cfff76)
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/57cdee61-9789-45d4-8b0b-72225eb7ffaf)
+
+
+example 2
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/148a2b82-99f4-4074-b8fb-68bd0731a4e4)
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/35fec998-d4b9-49c6-844f-24f7804f02d3)
+
+
+
+### Mock Axios
+
+example 1
+
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/1efc401e-61b5-417e-97a8-682407403df3)
+
+
+### MockLocalStorage
+
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/7a10aecd-9081-4949-82d7-2ea78238ba52)
+
+
+### Mock Import Component
+
+![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/572722d3-a7d6-41bc-80e3-9b388f20a114)
+
+
 ## Test
 
 ### api-client
