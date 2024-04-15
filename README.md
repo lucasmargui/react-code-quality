@@ -3,9 +3,6 @@
 This example shows how to configure Jest to work with Next.js.
 
 
-
-
-
 ## Hooks 
 
 Code snippets to run before or after each or all tests
@@ -63,48 +60,82 @@ Execute code once before each test
 
 ### Mock Function
 
-exemplo 1
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/01345ecf-77b7-4a61-a6de-7ed1085c60dd)
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/3257b4e7-2c3f-4238-a676-35f5b3b14e38)
+Isolate Components: By replacing real functions with mock functions, developers can isolate the behavior of the component being tested from the rest of the system.
 
-example 2 
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/34ab2817-f88e-438c-a7f9-728cdb3ea4fa)
+Control Behavior: Mock functions can be programmed to return predefined values or simulate specific behaviors, allowing developers to test different scenarios and edge cases.
 
+Verify Function Calls: Mock functions can track how they are called, including the number of times they are called and with what parameters. This enables developers to verify that the component being tested interacts correctly with its dependencies.
+
+<div align="center">
+  <h3> Example 1 </h3>
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/01345ecf-77b7-4a61-a6de-7ed1085c60dd" style="width:70%">
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/3257b4e7-2c3f-4238-a676-35f5b3b14e38" style="width:70%">
+</div>
+
+
+<div align="center">
+  <h3> Example 2 </h3>
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/34ab2817-f88e-438c-a7f9-728cdb3ea4fa" style="width:70%">
+</div>
 
 
 
 ### Mock Fetch
 
+This mock function behaves like the real fetch function in terms of interface but doesn't actually perform any network requests. Instead, it returns pre-defined data or allows you to simulate different responses based on the input parameters.
 
-example 1
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/7b3fa877-fecd-4205-9b3d-53caf7cfff76)
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/57cdee61-9789-45d4-8b0b-72225eb7ffaf)
+<div align="center">
+  <h3> Example 1 </h3>
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/7b3fa877-fecd-4205-9b3d-53caf7cfff76" style="width:70%">
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/57cdee61-9789-45d4-8b0b-72225eb7ffaf" style="width:70%">
+</div>
 
 
-example 2
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/148a2b82-99f4-4074-b8fb-68bd0731a4e4)
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/35fec998-d4b9-49c6-844f-24f7804f02d3)
 
+<div align="center">
+    <h3> Example 2 </h3>
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/148a2b82-99f4-4074-b8fb-68bd0731a4e4" style="width:70%">
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/35fec998-d4b9-49c6-844f-24f7804f02d3" style="width:70%">
+</div>
 
 
 ### Mock Axios
 
-example 1
 
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/1efc401e-61b5-417e-97a8-682407403df3)
+Mocking Axios essentially means creating fake responses that mimic the behavior of Axios, a popular JavaScript library used for making HTTP requests from browsers or Node.js. Mocking Axios is often done in testing scenarios to simulate API responses without actually making real network requests, which helps in writing unit tests that are isolated from external dependencies.
+
+Here's a basic example of how you might mock Axios using a library like axios-mock-adapter:
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/1efc401e-61b5-417e-97a8-682407403df3" style="width:70%">
+</div>
 
 
-### MockLocalStorage
+### Mock LocalStorage
 
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/7a10aecd-9081-4949-82d7-2ea78238ba52)
+Mock LocalStorage provides a way to mimic the behavior of LocalStorage without actually interacting with the browser's storage. Instead, it creates an in-memory representation of LocalStorage that can be controlled and inspected during testing. This allows developers to write tests for code that relies on LocalStorage without affecting the real browser storage.
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/7a10aecd-9081-4949-82d7-2ea78238ba52" style="width:70%">
+</div>
+
 
 
 ### Mock Import Component
 
-![image](https://github.com/lucasmargui/React_Code_Quality/assets/157809964/572722d3-a7d6-41bc-80e3-9b388f20a114)
+Creating a placeholder or simulated component for testing or development purposes. This is commonly done when certain components or modules are not yet implemented or when you want to simulate their behavior without actually importing the real component.
+
+<div align="center">
+  <img src="https://github.com/lucasmargui/React_Code_Quality/assets/157809964/572722d3-a7d6-41bc-80e3-9b388f20a114" style="width:70%">
+
+</div>
+
+
 
 
 ## Test
+
+Involves a cyclical process of experimentation and analysis, where testing generates data and description provides meaning and insight into that data. 
 
 ### api-client
 
@@ -265,6 +296,8 @@ This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScri
 
 > **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
 
+
+# Getting started
 
 In your terminal, run the following command:
 
